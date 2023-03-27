@@ -8,10 +8,10 @@
  
  스택 (통 모양) - LIFO(Last In First Out, 후입선출), 삽입 삭제가 top 부분에서만 일어남
  
- |		  |
- |자료(TOP)|  <- 삽입 삭제가 일어나는 제일 끝 자료 위치
- |	자료	  |
- |	자료	  |
+ |		|
+ |	top	|			  <- 삽입 삭제가 일어나는 제일 끝 자료 위치
+ |	자료	|
+ |	자료	|
  ----------
 
  push 연산 : top 위치에 새로운 데이터 삽입
@@ -89,19 +89,22 @@ public class stackQue {
 		System.out.println("stack : "+mystack);
 		System.out.println("queue : "+myqueue);
 		
+		System.out.println("stack top 데이터 : " + mystack.peek());
+		System.out.println("queue front 데이터 : "+myqueue.peek());
+		
 		mystack.pop();
 		mystack.pop();
-		myqueue.remove(2);
-		myqueue.poll();
+		myqueue.remove(2); //큐에서 2 제거
+		myqueue.poll(); // 큐에서 front 제거
 		
 		System.out.println("pop() 두 번 한 stack : "+mystack);
 		System.out.println("2를 삭제하고 front에서 하나 삭제한 queue : " +myqueue);
 		
 		System.out.println("스택 비어있나 : "+mystack.empty());
+		System.out.println("스택 비어있나 : "+mystack.isEmpty());
 		System.out.println("큐 비어있나 : "+myqueue.isEmpty());
 		
-		System.out.println("stack top 데이터 : " + mystack.peek());
-		System.out.println("queue front 데이터 : "+myqueue.peek());
+
 		
 		System.out.println("stack에서 데이터 1의 인덱스 :"+mystack.search(1) + "   stack에서 데이터 0의 인덱스 :"+ mystack.search(0));
 		System.out.println("큐의 front 값 확인 :" + myqueue.element());
