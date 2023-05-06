@@ -14,11 +14,15 @@
  |	자료	|
  ----------
 
- push 연산 : top 위치에 새로운 데이터 삽입
- pop 연산 : top 위치에 있는 데이터를 삭제하고 확인 (데이터 빼내서 확인)
- peek 연산 : top 위치에 있는 데이터를 단순화 (데이터 단순 확인)
- empty 연산 : 스택이 비어있는지 true false 반환
- search 연산 : 스택에서 주어진 객체 자료의 위치 반환 (스택 인덱스는 1부터 시작)
+ Stack<E> myStack = new Stack<>();
+
+	myStack.push(E item);		: top 자리에 item 삽입
+	myStack.pop();				: top 자리에서 item 반출 (성공 item리턴/ 실패 예외발생)
+	
+	myStack.peek();				: top 자리 객체 확인 (성공 item리턴/ 실패 예외발생)
+	myStack.empty();			: true/false 반환
+	myStack.search(E item);		: item의 int 인덱스 반환 (1부터시작, 실패 -1 리턴)
+	
  
  종류 : 깊이 우선 탐색(DFS), 백트래킹, 재귀함수 알고리즘(후입선출)
  
@@ -33,19 +37,18 @@
  		rear				front
  
  
- add 연산 : rear 부분에 새로운 데이터 삽입, 성공하면 true 실패하면 false 반환
- poll 연산 : front 부분에 있는 데이터 삭제 후 확인 (데이터 빼내서 확인), 비어있으면 null 반환
- peek 연산 : front 부분에 있는 데이터 단순 확인 (데이터 단순 확인), 비어있으면 null 반환
- element 연산 : front 부분에 있는 데이터 단순 확인, 비어있으면 예외처리 발생(Exception)
- isEmpty 연산 : 큐가 비어있는지 확인하여 true false 반환
- 
- remove(지울 값)
- 
- 
-비어있을 시		예외발생			true false 리턴 
-추가			add()			offer()
-삭제			remove()		poll()
-검사			element()		peek()
+ Queue<E> myQueue = new Queue<>();
+ 	
+ 	myQueue.offer(E e);		: e 삽입. (성공 true/ 실패 false)
+ 	myQueue.poll();			: front 자리에서 item 반출 (성공 item 리턴/ 실패 null 리턴)
+ 	
+ 	myQueue.add(E e);		: e 삽입. (성공 true/ 실패 예외발생)
+ 	myQueue.remove();		: front 자리에서 item 반출 (성공 item 리턴/ 실패 예외발생)
+ 	
+ 	myQueue.element();		: front 자리 객체 확인 (성공 item 리턴/ 실패 예외발생)
+ 	myQueue.peek();			: front 자리 객체 확인 (성공 item 리턴/ 실패 null 리턴)
+ 	myQueue.isEmpty();		: true/false 리턴
+
  
  
  
